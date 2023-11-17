@@ -39,11 +39,8 @@ public static final int DB_VERSION = 3;
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         if (i != i1) {
-            db.execSQL("drop table if exists ThuThu");
-            db.execSQL("drop table if exists ThanhVien");
-            db.execSQL("drop table if exists LoaiSach");
-            db.execSQL("drop table if exists Sach");
-            db.execSQL("drop table if exists PhieuMuon");
+            db.execSQL("drop table if exists NhanVien");
+
             onCreate(db);
         }
     }
