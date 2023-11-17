@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-public static final String DB_NAME ="CATTOC";
-public static final int DB_VERSION = 1;
+public static final String DB_NAME ="CATTOC_FPT";
+public static final int DB_VERSION = 3;
 
     public DbHelper (@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
