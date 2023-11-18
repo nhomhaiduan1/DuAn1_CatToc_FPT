@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duan_cattoc.Dao.NhanVienDAO;
@@ -19,6 +20,8 @@ public class DangNhap extends AppCompatActivity {
     CheckBox chkRememberPass;
     NhanVienDAO nvdao;
     String strUser, strPass;
+    TextView tvDangky;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class DangNhap extends AppCompatActivity {
         edUserName = findViewById(R.id.edUserName);
         edPassword = findViewById(R.id.edPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        tvDangky = findViewById(R.id.tvDangky);
         btnCancel = findViewById(R.id.btnCancel);
         chkRememberPass = findViewById(R.id.chkRememberPass);
         nvdao = new NhanVienDAO(this);
@@ -51,6 +55,12 @@ public class DangNhap extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkLogin();
+            }
+        });
+        tvDangky.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DangNhap.this, DangKy.class));
             }
         });
     }

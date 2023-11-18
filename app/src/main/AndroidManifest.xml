@@ -27,6 +27,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".DangKy"
+            android:exported="false" />
+        <activity
             android:name=".manhinhcho"
             android:exported="true"
             android:label="@string/title_activity_manhinhcho"
