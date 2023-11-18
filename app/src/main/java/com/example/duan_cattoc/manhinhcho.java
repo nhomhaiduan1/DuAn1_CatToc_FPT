@@ -8,14 +8,15 @@ import android.os.Handler;
 import android.widget.TextView;
 
 public class manhinhcho extends AppCompatActivity {
-TextView appname;
+TextView appname,lottie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manhinhcho);
-appname=findViewById(R.id.appname);
+        appname=findViewById(R.id.appname);
         appname.animate().translationY(-1400).setDuration(2700).setStartDelay(0);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
