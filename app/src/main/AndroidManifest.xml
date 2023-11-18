@@ -13,22 +13,29 @@
         android:theme="@style/Theme.DuAn_CatToc"
         tools:targetApi="31">
         <activity
-            android:name=".DangNhap"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-             />
-        <activity
-            android:name=".manhinhcho"
+            android:name=".MainActivity2"
             android:exported="true"
-            android:label="@string/title_activity_manhinhcho"
-            android:theme="@style/Theme.DuAn_CatToc">
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.DuAn_CatToc.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DangNhap"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".manhinhcho"
+            android:exported="false"
+            android:label="@string/title_activity_manhinhcho"
+            android:theme="@style/Theme.DuAn_CatToc">
+
         </activity>
     </application>
 
