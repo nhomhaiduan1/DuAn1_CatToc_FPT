@@ -6,23 +6,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="Trang chủ" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Đặt lịch" />
+            android:id="@+id/nav_QLDV"
+            android:icon="@drawable/ic_dv"
+            android:title="Quản lý dịch vụ" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Lịch sử" />
+            android:id="@+id/nav_QLNV"
+            android:icon="@drawable/ic_nv"
+            android:title="Quản lý nhân viên" />
 
-        <item android:id="@+id/nav_list"
-            android:icon="@drawable/side_nav_bar"
-            android:title="Danh sách nhân viên"/>
+        <item android:id="@+id/nav_DatLich"
+            android:icon="@drawable/ic_lich"
+            android:title="Đặt lịch"/>
 
-        <item android:id="@+id/nav_dx"
-            android:icon="@drawable/side_nav_bar"
+        <item android:id="@+id/nav_LichSuDat"
+            android:icon="@drawable/ic_his"
+            android:title="Lịch sử đặt"/>
+
+        <item android:id="@+id/nav_DoanhThu"
+            android:icon="@drawable/ic_doanhthu"
+            android:title="Doanh thu"/>
+
+        <item android:id="@+id/nav_LienHe"
+            android:icon="@drawable/ic_phone"
+            android:title="Liên hệ"/>
+
+        <item android:id="@+id/nav_DoiPass"
+            android:icon="@drawable/ic_pass"
+            android:title="Đổi mật khẩu"/>
+
+        <item android:id="@+id/nav_DangXuat"
+            android:icon="@drawable/ic_out"
             android:title="Đăng xuất"/>
     </group>
 </menu>

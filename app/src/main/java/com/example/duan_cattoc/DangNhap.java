@@ -89,7 +89,7 @@ public class DangNhap extends AppCompatActivity {
             if (nvdao.checkLogin(strUser, strPass) > 0) {
                 Toast.makeText(getApplicationContext(), "Login thành công", Toast.LENGTH_SHORT).show();
                 rememberUser(strUser, strPass, chkRememberPass.isChecked());
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("user", strUser);
                 startActivity(intent);
                 finish();

@@ -12,14 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn_CatToc"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.DuAn_CatToc.NoActionBar" >
 
-
-        </activity>
         <activity
             android:name=".DangNhap"
             android:exported="false" />
