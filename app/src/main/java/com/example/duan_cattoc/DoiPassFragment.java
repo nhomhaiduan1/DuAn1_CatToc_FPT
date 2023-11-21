@@ -7,11 +7,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.example.duan_cattoc.Dao.NhanVienDAO;
+import com.google.android.material.textfield.TextInputEditText;
 
 
 public class DoiPassFragment extends Fragment {
 
-
+    TextInputEditText edPassOld, edPassChange, edRePassChange;
+    Button btnSaveUserChange, btnCancleUserChange;
+    NhanVienDAO nvdao;
 
     public DoiPassFragment() {
         // Required empty public constructor
