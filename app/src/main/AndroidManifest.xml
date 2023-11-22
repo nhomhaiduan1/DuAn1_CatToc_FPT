@@ -12,7 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn_CatToc"
         tools:targetApi="31">
-
+        <activity
+            android:name=".fragment_ThemNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_DangXuat"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_DoiMatKhau"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_Profile"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_GioHang"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_DoanhThu"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_QuanLyNhanVien"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_QuanLyDichVu"
+            android:exported="false" />
+        <activity
+            android:name=".fragment_QuanLyDonHang"
+            android:exported="false" />
         <activity
             android:name=".DangNhap"
             android:exported="false" />
@@ -25,7 +51,6 @@
         <activity
             android:name=".manhinhcho"
             android:exported="true"
-            android:label="@string/title_activity_manhinhcho"
             android:theme="@style/Theme.DuAn_CatToc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/sub_quanlydonhang"
             android:icon="@drawable/ic_home"
-            android:title="Trang chủ" />
+            android:title="Quản Lý Đơn Hàng" />
         <item
-            android:id="@+id/nav_QLDV"
+            android:id="@+id/sub_QLDV"
             android:icon="@drawable/ic_dv"
             android:title="Quản lý dịch vụ" />
         <item
-            android:id="@+id/nav_QLNV"
+            android:id="@+id/sub_QLNV"
             android:icon="@drawable/ic_nv"
             android:title="Quản lý nhân viên" />
 
-        <item android:id="@+id/nav_DatLich"
-            android:icon="@drawable/ic_lich"
-            android:title="Đặt lịch"/>
-
-        <item android:id="@+id/nav_LichSuDat"
-            android:icon="@drawable/ic_his"
-            android:title="Lịch sử đặt"/>
-
-        <item android:id="@+id/nav_DoanhThu"
+        <item android:id="@+id/sub_DoanhThu"
             android:icon="@drawable/ic_doanhthu"
             android:title="Doanh thu"/>
 
-        <item android:id="@+id/nav_LienHe"
+        <item android:id="@+id/sub_GioHang"
+            android:icon="@drawable/ic_his"
+            android:title="Giỏ Hàng"/>
+        <item android:id="@+id/sub_Profile"
             android:icon="@drawable/ic_phone"
             android:title="Liên hệ"/>
 
-        <item android:id="@+id/nav_DoiPass"
-            android:icon="@drawable/ic_pass"
-            android:title="Đổi mật khẩu"/>
+        <item android:title="Người dùng">
+<menu>
+    <item android:id="@+id/sub_AddUser"
+        android:icon="@drawable/ic_adduser"
+        android:visible="false"
+        android:title="Thêm người dùng"
+        />
 
-        <item android:id="@+id/nav_DangXuat"
-            android:icon="@drawable/ic_out"
-            android:title="Đăng xuất"/>
+    <item android:id="@+id/sub_Pass"
+        android:icon="@drawable/ic_pass"
+        android:title="Đổi mật khẩu"
+        />
+    <item android:id="@+id/sub_Logout"
+        android:icon="@drawable/ic_out"
+        android:title="Đăng xuất"
+        />
+</menu>
+        </item>
+
     </group>
 </menu>

@@ -20,35 +20,35 @@ public class NhanVienDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-//    public long insert(Nhanvien obj) {
-//        ContentValues values = new ContentValues();
-//        values.put("maNV", obj.getMaNV());
-//        values.put("hoTen", obj.getHoTen());
-//        values.put("matKhau", obj.getMatKhau());
-//        return db.insert("NhanVien", null, values);
-//    }
-//
-//    public long updatePass(Nhanvien obj) {
-//        ContentValues values = new ContentValues();
-//        values.put("hoTen", obj.getHoTen());
-//        values.put("matKhau", obj.getMatKhau());
-//        return db.update("NhanVien", values, "maNV = ?", new String[]{String.valueOf(obj.getMaNV())});
-//    }
-//
-//    public long delete(String id) {
-//        return db.delete("NhanVien", "maNV = ?", new String[]{String.valueOf(id)});
-//    }
-//
-//    public List<Nhanvien> getAll() {
-//        String sql = "SELECT * FROM NhanVien";
-//        return getData(sql);
-//    }
-//
-//    public Nhanvien getID(String id) {
-//        String sql = "SELECT * FROM NhanVien WHERE maNV=?";
-//        List<Nhanvien> list = getData(sql, id);
-//        return list.get(0);
-//    }
+    public long insert(Nhanvien obj) {
+        ContentValues values = new ContentValues();
+        values.put("maNV", obj.getMaNV());
+        values.put("hoTen", obj.getHoTen());
+        values.put("matKhau", obj.getMatKhau());
+        return db.insert("NhanVien", null, values);
+    }
+
+    public long updatePass(Nhanvien obj) {
+        ContentValues values = new ContentValues();
+        values.put("hoTen", obj.getHoTen());
+        values.put("matKhau", obj.getMatKhau());
+        return db.update("NhanVien", values, "maNV = ?", new String[]{String.valueOf(obj.getMaNV())});
+    }
+
+    public long delete(String id) {
+        return db.delete("NhanVien", "maNV = ?", new String[]{String.valueOf(id)});
+    }
+
+    public List<Nhanvien> getAll() {
+        String sql = "SELECT * FROM NhanVien";
+        return getData(sql);
+    }
+
+    public Nhanvien getID(String id) {
+        String sql = "SELECT * FROM NhanVien WHERE maNV=?";
+        List<Nhanvien> list = getData(sql, id);
+        return list.get(0);
+    }
 
     // check login
     public int checkLogin(String id, String password) {
@@ -73,4 +73,6 @@ public class NhanVienDAO {
         }
         return list;
     }
+
+
 }

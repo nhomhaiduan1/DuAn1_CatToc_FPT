@@ -1,13 +1,27 @@
 package com.example.duan_cattoc;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.duan_cattoc.Dao.NhanVienDAO;
 import com.example.duan_cattoc.databinding.ActivityMainBinding;
+import com.example.duan_cattoc.model.Nhanvien;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -18,51 +32,129 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
+    DrawerLayout drawer;
+    Toolbar toolbar;
+    View mHeaderView;
+    TextView tvUser;
+    NavigationView nv;
 
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
-
+    NhanVienDAO nhanVienDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        // anh xa
+        drawer = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar1);
+        nv = findViewById(R.id.nvView);
+        // set toolbar thay actionbar
+        setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        ActionBar ab = getSupportActionBar();
+        ab.setHomeAsUpIndicator(R.drawable.menu);
+        ab.setDisplayHomeAsUpEnabled(true);
+        // set mau icon ve ban goc
+        nv.setItemIconTintList(null);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        // show user trên header
+        mHeaderView = nv.getHeaderView(0);
+        tvUser = mHeaderView.findViewById(R.id.tvUser);
+        Intent i = getIntent();
+        String user = i.getStringExtra("user");
+        nhanVienDAO = new NhanVienDAO(this);
+        Nhanvien nhanVien = nhanVienDAO.getID(user);
+        String username = nhanVien.getHoTen();
+        tvUser.setText("Welcome " + username + "!");
 
-        setSupportActionBar(binding.appBarMain2.toolbar);
-        binding.appBarMain2.fab.setOnClickListener(new View.OnClickListener() {
+        // admin co quyen add user
+        if (user.equalsIgnoreCase("admin")) {
+            nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
+        }
+        fragment_QuanLyDonHang frquanlydonhang = new fragment_QuanLyDonHang();
+        replaceFrg(frquanlydonhang);
+
+
+        nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+                if (id == R.id.sub_quanlydonhang) {
+                    setTitle("Quản Lý Đơn Hàng");
+                    replaceFrg(frquanlydonhang);
+
+                } else if (id == R.id.sub_QLDV) {
+                    setTitle("Quản lý Dịch vụ");
+                    fragment_QuanLyDichVu frdichvu = new fragment_QuanLyDichVu();
+                    replaceFrg(frdichvu);
+
+                } else if (id == R.id.sub_QLNV) {
+                    setTitle("Quản lý Nhân viên");
+                    fragment_QuanLyNhanVien frnhanvien = new fragment_QuanLyNhanVien();
+                    replaceFrg(frnhanvien);
+
+                } else if (id == R.id.sub_DoanhThu) {
+                    setTitle("Quản lý Doanh Thu");
+                    fragment_DoanhThu frdoanhthu = new fragment_DoanhThu();
+                    replaceFrg(frdoanhthu);
+
+                } else if (id == R.id.sub_GioHang) {
+                    setTitle("Quản Lý Giỏ Hàng");
+                    fragment_GioHang frgiohang = new fragment_GioHang();
+                    replaceFrg(frgiohang);
+
+                } else if (id == R.id.sub_Profile) {
+                    setTitle("Profile");
+                    fragment_Profile frprofile = new fragment_Profile();
+                    replaceFrg(frprofile);
+
+                } else if (id == R.id.sub_AddUser) {
+                    setTitle("Thêm người dùng");
+                    fragment_ThemNhanVien fradduser = new fragment_ThemNhanVien();
+                    replaceFrg(fradduser);
+
+           }
+
+               else if (id == R.id.sub_Pass) {
+                    setTitle("Thay đổi mật khẩu");
+                    fragment_DoiMatKhau frchangepass = new fragment_DoiMatKhau();
+                    replaceFrg(frchangepass);
+
+                } else if (id == R.id.sub_Logout) {
+                    android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("Đăng xuất");
+                    builder.setMessage("Bạn có muốn đăng xuất không?");
+                    builder.setCancelable(true);
+
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(MainActivity.this, DangNhap.class);
+                            Toast.makeText(MainActivity.this, "Đã đăng xuất", Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            Toast.makeText(MainActivity.this, "Không đăng xuất", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
+                }
+                drawer.closeDrawers();
+                return true;
             }
         });
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_QLDV, R.id.nav_QLNV, R.id.nav_DatLich, R.id.nav_LichSuDat,
-                R.id.nav_DoanhThu, R.id.nav_LienHe, R.id.nav_DoiPass,
-                R.id.nav_DangXuat)
-                .setOpenableLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void replaceFrg(Fragment frg) {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.flContent, frg).commit();
     }
 }
