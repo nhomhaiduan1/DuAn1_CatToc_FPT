@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
-public static final int DB_VERSION = 3;
+public static final int DB_VERSION = 4;
 
     public DbHelper (@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -33,7 +33,7 @@ public static final int DB_VERSION = 3;
 
 //Data Mẫu
         db.execSQL("INSERT INTO NhanVien VALUES('admin','Admin','admin')," +
-                "('minhbc','Bùi Công Minh','1')");
+                "('NguyenVanM','Bùi Công Minh','1')");
     }
 
     @Override

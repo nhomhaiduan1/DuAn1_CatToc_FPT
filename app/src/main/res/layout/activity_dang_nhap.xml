@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     android:layout_margin="15dp"
     android:orientation="vertical"
-    tools:context=".DangNhap">
+    tools:context=".DangNhap"
+ >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:src="@drawable/logocattoc"/>
+        android:src="@drawable/logocattoc"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="40dp"/>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#F44336"
+            android:backgroundTint="#03A9F4"
             android:text="Đăng nhập"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -68,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#F44336"
+            android:backgroundTint="#03A9F4"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginLeft="40dp"

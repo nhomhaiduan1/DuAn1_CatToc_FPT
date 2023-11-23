@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
                     replaceFrg(frgiohang);
 
                 } else if (id == R.id.sub_LienHe) {
-                    setTitle("Profile");
-                    fragment_LienHe frprofile = new fragment_LienHe();
-                    replaceFrg(frprofile);
+                    setTitle("LienHe");
+                    fragment_LienHe frlienhe = new fragment_LienHe();
+                    replaceFrg(frlienhe);
 
                 } else if (id == R.id.sub_AddUser) {
                     setTitle("Thêm người dùng");
