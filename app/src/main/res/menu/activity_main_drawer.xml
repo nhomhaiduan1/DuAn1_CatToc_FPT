@@ -22,9 +22,9 @@
         <item android:id="@+id/sub_GioHang"
             android:icon="@drawable/ic_his"
             android:title="Giỏ Hàng"/>
-        <item android:id="@+id/sub_Profile"
+        <item android:id="@+id/sub_LienHe"
             android:icon="@drawable/ic_phone"
-            android:title="Liên hệ"/>
+            android:title="Liên Hệ"/>
 
         <item android:title="Người dùng">
 <menu>

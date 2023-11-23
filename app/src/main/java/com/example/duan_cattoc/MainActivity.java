@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duan_cattoc.Dao.NhanVienDAO;
-import com.example.duan_cattoc.databinding.ActivityMainBinding;
 import com.example.duan_cattoc.model.Nhanvien;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -22,10 +19,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -105,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
                     fragment_GioHang frgiohang = new fragment_GioHang();
                     replaceFrg(frgiohang);
 
-                } else if (id == R.id.sub_Profile) {
+                } else if (id == R.id.sub_LienHe) {
                     setTitle("Profile");
-                    fragment_Profile frprofile = new fragment_Profile();
+                    fragment_LienHe frprofile = new fragment_LienHe();
                     replaceFrg(frprofile);
 
                 } else if (id == R.id.sub_AddUser) {
