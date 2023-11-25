@@ -11,6 +11,25 @@ public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
 public static final int DB_VERSION = 4;
 
+
+//
+//    //Dịch vụ
+//    private static final String TABLE_CATTOC = "CATTOC"; //Bảng
+//    private static final String KEY_ID = "Id"; // ID
+//    private static final String KEY_CATTOC_NAME = "CATTOCName"; //Tên Dịch vụ Cắt Tóc
+//    private static final String KEY_CATTOC_AMOUNT = "DrinkAmount"; // Số lượng
+//    private static final String KEY_CATTOC_PRICE = "DrinkPrice"; //Giá
+//
+//
+//    //Chỗ Cắt Tóc
+//    private static final String TABLE_BOOK = "BOOK"; //book phòng
+//    private static final String KEY_CATTOC_LIST = "CATTOCList"; //Danh Sách Dịch Vụ
+//
+//    //thanh toán
+//    private static final String TABLE_BILL = "BILL"; //Bill thanh Toán
+//    private static final String KEY_TOTAL_MONEY = "TotalMoney"; //tiền
+//    private static final String KEY_DATE_BILL = "DateBill"; //Ngày hóa Đơn
+
     public DbHelper (@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -24,8 +43,21 @@ public static final int DB_VERSION = 4;
                 "matKhau TEXT NOT NULL)";
         db.execSQL(createTableNhanVien);
         // bảng khác
-
-
+//
+//        String createTableStudent = String.format("CREATE TABLE %s" +
+//                        "(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s DOUBLE)",
+//                TABLE_CATTOC, KEY_ID, KEY_CATTOC_NAME, KEY_CATTOC_AMOUNT,KEY_CATTOC_PRICE);
+//        db.execSQL(createTableStudent);
+//
+//        String createTableDepartment = String.format("CREATE TABLE %s" +
+//                        "(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT)",
+//                TABLE_BOOK, KEY_ID, KEY_CATTOC_LIST);
+//        db.execSQL(createTableDepartment);
+//
+//        String createTableCategoryRoom = String.format("CREATE TABLE %s" +
+//                        "(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s DOUBLE,%s TEXT)",
+//                TABLE_BILL, KEY_ID, KEY_CATTOC_LIST, KEY_TOTAL_MONEY, KEY_DATE_BILL);
+//        db.execSQL(createTableCategoryRoom);
 
 
 

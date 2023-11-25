@@ -57,12 +57,7 @@ public class DangNhap extends AppCompatActivity {
                 checkLogin();
             }
         });
-        tvDangky.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DangNhap.this, DangKy.class));
-            }
-        });
+
     }
 
     public void rememberUser(String u, String p, boolean status) {

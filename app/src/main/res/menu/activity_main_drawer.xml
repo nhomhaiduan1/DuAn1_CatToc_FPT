@@ -13,7 +13,7 @@
         <item
             android:id="@+id/sub_QLNV"
             android:icon="@drawable/ic_nv"
-            android:title="Quản lý nhân viên" />
+            android:title="Để Trống" />
 
         <item android:id="@+id/sub_DoanhThu"
             android:icon="@drawable/ic_doanhthu"
@@ -21,7 +21,7 @@
 
         <item android:id="@+id/sub_GioHang"
             android:icon="@drawable/ic_his"
-            android:title="Giỏ Hàng"/>
+            android:title="ĐỂ Trống"/>
         <item android:id="@+id/sub_LienHe"
             android:icon="@drawable/ic_phone"
             android:title="Liên Hệ"/>
@@ -29,9 +29,9 @@
         <item android:title="Người dùng">
 <menu>
     <item android:id="@+id/sub_AddUser"
-        android:icon="@drawable/ic_adduser"
+        android:icon="@drawable/ic_nv"
         android:visible="false"
-        android:title="Thêm người dùng"
+        android:title="Quản Lý Nhân Viên"
         />
 
     <item android:id="@+id/sub_Pass"
