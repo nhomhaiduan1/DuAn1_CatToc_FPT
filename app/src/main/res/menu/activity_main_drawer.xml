@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_doanhthu"
             android:title="Doanh thu"/>
 
-        <item android:id="@+id/sub_GioHang"
+        <item android:id="@+id/sub_LoaiDichVu"
             android:icon="@drawable/ic_his"
-            android:title="ĐỂ Trống"/>
+            android:title="Loại Dịch Vụ"/>
         <item android:id="@+id/sub_LienHe"
             android:icon="@drawable/ic_phone"
             android:title="Liên Hệ"/>
