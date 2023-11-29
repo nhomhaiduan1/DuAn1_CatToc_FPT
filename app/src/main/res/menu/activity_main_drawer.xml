@@ -22,9 +22,7 @@
         <item android:id="@+id/sub_LoaiDichVu"
             android:icon="@drawable/ic_his"
             android:title="Loại Dịch Vụ"/>
-        <item android:id="@+id/sub_LienHe"
-            android:icon="@drawable/ic_phone"
-            android:title="Liên Hệ"/>
+
 
         <item android:title="Người dùng">
 <menu>
@@ -33,7 +31,9 @@
         android:visible="false"
         android:title="Quản Lý Nhân Viên"
         />
-
+    <item android:id="@+id/sub_LienHe"
+        android:icon="@drawable/ic_phone"
+        android:title="Liên Hệ"/>
     <item android:id="@+id/sub_Pass"
         android:icon="@drawable/ic_pass"
         android:title="Đổi mật khẩu"
