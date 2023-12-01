@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
-public static final int DB_VERSION = 9;
+public static final int DB_VERSION = 10;
 
 
     public DbHelper (@Nullable Context context) {
@@ -45,15 +45,15 @@ public static final int DB_VERSION = 9;
                 "SDT TEXT NOT NULL) ";
         db.execSQL(createTableKhachHang);
         // tạo bảng Đơn Hàng
-        String createTableDonHang = "create table DonHang(" +
-                "maDH INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String createTableHoaDon = "create table HoaDon(" +
+                "maHD INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "maNV TEXT REFERENCES NhanVien(maNV), " +
                 "maKH INTEGER REFERENCES KhachHang(maKH), " +
                 "maDichVu INTEGER REFERENCES DichVu(maDichVu), " +
                 "gia INTEGER NOT NULL, " +
                 "ngay DATE NOT NULL, " +
                 "thanhToan INTEGER NOT NULL)";
-        db.execSQL(createTableDonHang);
+        db.execSQL(createTableHoaDon);
 //Data Mẫu
         db.execSQL("INSERT INTO NhanVien VALUES('admin','Admin','admin')," +
                 "('NguyenVanM','Bùi Công Minh','1')");
@@ -61,7 +61,7 @@ public static final int DB_VERSION = 9;
                 "(2,'Nguyễn Thị Trân','2001', '03283234231')");
         db.execSQL("INSERT INTO LoaiDichVu VALUES(1,'Cắt Tóc'),(2,'Nhuộm Tóc'),(3,'Uốn Tóc')");
         db.execSQL("INSERT INTO DichVu VALUES(1,'Cắt Layer',40000,'2'),(2,'Nhuộm Vàng',15000,'1'),(3,'Uốn Con Sâu',200000,'3')");
-        db.execSQL("INSERT INTO DonHang VALUES(1,'admin','1','1','2000','2023/09/21','1')," +
+        db.execSQL("INSERT INTO HoaDon VALUES(1,'admin','1','1','2000','2023/09/21','1')," +
                 "(2,'NguyenVanM','2','2','2000','2023/09/23','1')");
     }
 
@@ -72,7 +72,7 @@ public static final int DB_VERSION = 9;
             db.execSQL("drop table if exists LoaiDichVu");
             db.execSQL("drop table if exists DichVu");
             db.execSQL("drop table if exists KhachHang");
-            db.execSQL("drop table if exists DonHang");
+            db.execSQL("drop table if exists HoaDon");
             onCreate(db);
         }
     }

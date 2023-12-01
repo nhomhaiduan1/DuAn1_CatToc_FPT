@@ -32,15 +32,15 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:text="Tên Khách Hàng"/>
-            <TextView
-                android:id="@+id/tvTenNV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                android:text="Tên Nhân Viên Cắt"/>
+<!--            <TextView-->
+<!--                android:id="@+id/tvTenNV"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="14dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Tên Nhân Viên Cắt"/>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,6 +55,14 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="Tên Dịch Vụ:"/>
+                <TextView
+                    android:id="@+id/tvThanhToan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="Trả Sách"/>
 
             </LinearLayout>
             <LinearLayout
