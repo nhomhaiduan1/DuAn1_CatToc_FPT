@@ -26,14 +26,13 @@
             android:layout_width="wrap_content"
             android:id="@+id/tvTT"
             android:layout_height="wrap_content"
-            android:text="Nếu có bất kì thắc mắc nào, quý khách vui
-            lòng liên hệ qua 1 trong các phương thức sau"
+            android:text="Nếu có bất kì thắc mắc nào, quý khách vui lòng liên hệ qua trong các phương thức sau:"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:paddingBottom="10dp"
-            />
+            android:layout_marginEnd="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"

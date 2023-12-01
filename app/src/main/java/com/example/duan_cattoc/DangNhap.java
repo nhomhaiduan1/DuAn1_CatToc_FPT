@@ -30,7 +30,6 @@ public class DangNhap extends AppCompatActivity {
         edUserName = findViewById(R.id.edUserName);
         edPassword = findViewById(R.id.edPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvDangky = findViewById(R.id.tvDangky);
         btnCancel = findViewById(R.id.btnCancel);
         chkRememberPass = findViewById(R.id.chkRememberPass);
         nvdao = new NhanVienDAO(this);

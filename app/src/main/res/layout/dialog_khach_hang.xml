@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#03A9F4"
             android:drawableStart="@drawable/ic_save"
             android:text="Lưu" />
 
