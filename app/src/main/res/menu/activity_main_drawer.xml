@@ -11,9 +11,9 @@
             android:icon="@drawable/ic_dv"
             android:title="Quản lý dịch vụ" />
         <item
-            android:id="@+id/sub_QLNV"
+            android:id="@+id/sub_QLKH"
             android:icon="@drawable/ic_nv"
-            android:title="Để Trống" />
+            android:title="Khách Hàng" />
 
         <item android:id="@+id/sub_DoanhThu"
             android:icon="@drawable/ic_doanhthu"

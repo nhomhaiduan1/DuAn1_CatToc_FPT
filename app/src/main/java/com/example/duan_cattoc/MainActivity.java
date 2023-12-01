@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
                     fragment_QuanLyDichVu frdichvu = new fragment_QuanLyDichVu();
                     replaceFrg(frdichvu);
 
-                } else if (id == R.id.sub_QLNV) {
-                    setTitle("Quản lý Nhân viên");
-                    fragment_QuanLyNhanVien frnhanvien = new fragment_QuanLyNhanVien();
-                    replaceFrg(frnhanvien);
+                } else if (id == R.id.sub_QLKH) {
+                    setTitle("Quản lý Khách Hàng");
+                    fragment_QuanLyKhachHang frkhachhang = new fragment_QuanLyKhachHang();
+                    replaceFrg(frkhachhang);
 
                 } else if (id == R.id.sub_DoanhThu) {
                     setTitle("Quản lý Doanh Thu");

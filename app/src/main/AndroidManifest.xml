@@ -34,7 +34,7 @@
             android:name=".fragment_DoanhThu"
             android:exported="false" />
         <activity
-            android:name=".fragment_QuanLyNhanVien"
+            android:name=".fragment_QuanLyKhachHang"
             android:exported="false" />
         <activity
             android:name=".fragment_QuanLyDichVu"
