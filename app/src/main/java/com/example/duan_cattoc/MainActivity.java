@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (user.equalsIgnoreCase("admin")) {
             nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
         }
-        fragment_QuanLyDonHang frquanlydonhang = new fragment_QuanLyDonHang();
+        fragment_QuanLyHoaDon frquanlydonhang = new fragment_QuanLyHoaDon();
         replaceFrg(frquanlydonhang);
 
 

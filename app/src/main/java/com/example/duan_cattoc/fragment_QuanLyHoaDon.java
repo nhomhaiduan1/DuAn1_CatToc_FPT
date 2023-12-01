@@ -1,9 +1,5 @@
 package com.example.duan_cattoc;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,23 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.duan_cattoc.model.HoaDon;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
-public class fragment_QuanLyDonHang extends Fragment {
+public class fragment_QuanLyHoaDon extends Fragment {
 //    ListView lvDonHang;
 //    ArrayList<HoaDon> list;
 //    static PhieuMuonDAO dao;
@@ -55,7 +36,7 @@ public class fragment_QuanLyDonHang extends Fragment {
 //    Sach sach;
 //    int maSach, tienThue;
 //    int positionTV, positionSach;
-    public fragment_QuanLyDonHang() {
+    public fragment_QuanLyHoaDon() {
         // Required empty public constructor
     }
 
