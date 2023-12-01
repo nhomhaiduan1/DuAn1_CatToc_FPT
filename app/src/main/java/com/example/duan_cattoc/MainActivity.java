@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
                     fragment_LoaiDichVu frloaidichvu = new fragment_LoaiDichVu();
                     replaceFrg(frloaidichvu);
 
-                } else if (id == R.id.sub_LienHe) {
-                    setTitle("LienHe");
-                    fragment_LienHe frlienhe = new fragment_LienHe();
+                } else if (id == R.id.sub_Top) {
+                    setTitle("Top dịch Vụ dùng nhiều");
+                    TopDichVu frlienhe = new TopDichVu();
                     replaceFrg(frlienhe);
 
                 } else if (id == R.id.sub_AddUser) {
