@@ -10,6 +10,9 @@
             android:id="@+id/sub_QLDV"
             android:icon="@drawable/ic_dv"
             android:title="Quản lý dịch vụ" />
+        <item android:id="@+id/sub_LoaiDichVu"
+            android:icon="@drawable/ic_his"
+            android:title="Loại Dịch Vụ"/>
         <item
             android:id="@+id/sub_QLKH"
             android:icon="@drawable/ic_nv"
@@ -19,9 +22,7 @@
             android:icon="@drawable/ic_doanhthu"
             android:title="Doanh thu"/>
 
-        <item android:id="@+id/sub_LoaiDichVu"
-            android:icon="@drawable/ic_his"
-            android:title="Loại Dịch Vụ"/>
+
 
 
         <item android:title="Người dùng">
