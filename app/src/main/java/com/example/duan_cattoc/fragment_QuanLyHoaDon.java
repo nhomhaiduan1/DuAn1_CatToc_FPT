@@ -61,7 +61,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
     ArrayList<DichVu> listSach;
     DichVuDAO dichVuDAO;
     DichVu dichVu;
-    int maDichVu, thanhtoan;
+    int maDichVu, gia;
     int positionKH, positionDichVu;
     public fragment_QuanLyHoaDon() {
         // Required empty public constructor
@@ -143,8 +143,8 @@ public class fragment_QuanLyHoaDon extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 maDichVu = listSach.get(position).getMaDichVu();
-                thanhtoan = listSach.get(position).getGiaDichVu();
-                tvGia.setText("Tiền Dịch Vụ: " + thanhtoan);
+                gia = listSach.get(position).getGiaDichVu();
+                tvGia.setText("Tiền Dịch Vụ: " + gia);
 //                Toast.makeText(context, "Chọn: "+listSach.get(position).getTenSach(), Toast.LENGTH_SHORT).show();
             }
 
@@ -194,7 +194,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
                 item.setMaDichVu(maDichVu);
                 item.setMaKH(maKhachHang);
                 item.setNgay(new Date());
-                item.setThanhToan(thanhtoan);
+                item.setTienDichVu(gia);
                 if (chkThanhToan.isChecked()) {
                     item.setThanhToan(1);
                 } else {

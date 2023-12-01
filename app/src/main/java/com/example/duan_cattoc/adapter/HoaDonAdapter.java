@@ -30,7 +30,7 @@ public class HoaDonAdapter extends ArrayAdapter<HoaDon> {
     private Context context;
     fragment_QuanLyHoaDon fragment;
     private ArrayList<HoaDon> list;
-    TextView tvMaHD, tvTenKH, tvTenDichVu, tvTienDichVu, tvNgay, tvThanhToan;
+    TextView tvMaHD, tvTenKH, tvTenDichVu, tvGia, tvNgay, tvThanhToan;
     ImageView imgDel;
     DichVuDAO DichVuDAO;
     KhachHangDAO KhachHangDAO;
@@ -64,10 +64,10 @@ public class HoaDonAdapter extends ArrayAdapter<HoaDon> {
             KhachHang KhachHang = KhachHangDAO.getID(String.valueOf(item.getMaKH()));
             tvTenKH = v.findViewById(R.id.tvTenTV);
             tvTenKH.setText("Khách Hàng: " + KhachHang.getHoTen());
-            tvTienDichVu = v.findViewById(R.id.tvGia);
-            tvTienDichVu.setText("Tiền thuê: " + item.getTienDichVu());
+            tvGia = v.findViewById(R.id.tvGia);
+            tvGia.setText("Tiền Dịch Vụ: " + item.getTienDichVu());
             tvNgay = v.findViewById(R.id.tvNgayHD);
-            tvNgay.setText("Ngày thuê: " + sdf.format(item.getNgay()));
+            tvNgay.setText("Ngày : " + sdf.format(item.getNgay()));
 
             tvThanhToan = v.findViewById(R.id.tvThanhToan);
             if (item.getThanhToan() == 1) {

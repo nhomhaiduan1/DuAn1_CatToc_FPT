@@ -84,12 +84,4 @@ public class HoaDon {
     public void setThanhToan(int thanhToan) {
         ThanhToan = thanhToan;
     }
-
-    public String getMaTV() {
-        return maTV;
-    }
-
-    public void setMaTV(String maTV) {
-        this.maTV = maTV;
-    }
 }
