@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.duan_cattoc.Database.DbHelper;
 import com.example.duan_cattoc.model.DichVu;
 import com.example.duan_cattoc.model.HoaDon;
+import com.example.duan_cattoc.model.KhachHang;
 import com.example.duan_cattoc.model.Top;
 
 import java.text.ParseException;
@@ -19,14 +20,13 @@ public class HoaDonDAO {
     private static SQLiteDatabase db;
     private static Context context;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-    public List<HoaDon> searchHoaDonByTenKhachHang(String tenKhachHang) {
-        // Xây dựng truy vấn SQL để tìm kiếm hóa đơn theo tên khách hàng
-        String sql = "SELECT * FROM HoaDon hd " +
-                "JOIN KhachHang kh ON hd.maKH = kh.maKH " +
-                "WHERE kh.tenKhachHang LIKE ?";
-
-        // Thực hiện truy vấn và trả về danh sách kết quả
-        return getData(sql, "%" + tenKhachHang + "%");
+    public List<HoaDon> searchHoaDonByMaKhachHang(int maKhachHang) {
+        String sql = "SELECT * FROM HoaDon WHERE maKH = ?";
+        return getData(sql, String.valueOf(maKhachHang));
+    }
+    public List<KhachHang> getAllKhachHang() {
+        KhachHangDAO khachHangDAO = new KhachHangDAO(context);
+        return khachHangDAO.getAll();
     }
     public HoaDonDAO(Context context) {
         this.context = context;

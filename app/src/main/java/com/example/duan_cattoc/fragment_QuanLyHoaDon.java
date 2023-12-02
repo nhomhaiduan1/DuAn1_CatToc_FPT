@@ -34,6 +34,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class fragment_QuanLyHoaDon extends Fragment {
     ListView lvHoaDon;
@@ -47,8 +48,8 @@ public class fragment_QuanLyHoaDon extends Fragment {
     Spinner spKH, spDichVu;
     TextView tvNgay, tvGia;
     CheckBox chkThanhToan;
-    Button btnSave, btnCancel;
-
+    Button btnSave, btnCancel,btnSearch;
+    EditText edSearch; // Thêm ô nhập liệu tìm kiếm
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
     KhachHangSpinnerAdapter khachHangSpinnerAdapter;
@@ -74,6 +75,8 @@ public class fragment_QuanLyHoaDon extends Fragment {
         View v = inflater.inflate(R.layout.activity_fragment_quan_ly_don_hang,
                 container, false);
         lvHoaDon = v.findViewById(R.id.lvHoaDon);
+        edSearch = v.findViewById(R.id.edsearch); // Ánh xạ ô nhập liệu tìm kiếm
+        btnSearch = v.findViewById(R.id.btnSearch); // Ánh xạ nút tìm kiếm
         fab = v.findViewById(R.id.fab);
         dao = new HoaDonDAO(getActivity());
         fab.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +91,37 @@ public class fragment_QuanLyHoaDon extends Fragment {
                 item = list.get(position);
                 openDialog(getActivity(), 1);// update
                 return false;
+            }
+        });
+        // Xử lý sự kiện khi người dùng nhấn nút tìm kiếm
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Lấy dữ liệu từ ô nhập liệu tìm kiếm
+                String maKhachHangStr = edSearch.getText().toString().trim();
+
+                // Kiểm tra nếu ô nhập liệu không trống
+                if (!maKhachHangStr.isEmpty()) {
+                    // Chuyển mã khách hàng từ String sang int
+                    int maKhachHang = Integer.parseInt(maKhachHangStr);
+
+                    // Thực hiện tìm kiếm
+                    List<HoaDon> ketQuaTimKiem = dao.searchHoaDonByMaKhachHang(maKhachHang);
+
+                    // Hiển thị kết quả tìm kiếm
+                    if (!ketQuaTimKiem.isEmpty()) {
+                        // Cập nhật ListView hoặc hiển thị dữ liệu tìm kiếm
+                        list.clear();
+                        list.addAll(ketQuaTimKiem);
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        // Hiển thị thông báo nếu không tìm thấy kết quả
+                        Toast.makeText(getActivity(), "Không tìm thấy hóa đơn cho khách hàng này.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Nếu ô nhập liệu trống, thực hiện cập nhật lại toàn bộ danh sách
+                    capNhatlv();
+                }
             }
         });
         capNhatlv();
