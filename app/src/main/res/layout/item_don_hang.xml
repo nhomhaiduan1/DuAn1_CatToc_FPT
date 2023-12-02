@@ -62,7 +62,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_weight="1"
-                    android:text="Trả Sách"/>
+                    android:text="Thanh Toán:"/>
 
             </LinearLayout>
             <LinearLayout

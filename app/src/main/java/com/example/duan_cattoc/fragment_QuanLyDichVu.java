@@ -128,12 +128,11 @@ public class fragment_QuanLyDichVu extends Fragment {
 
         spinnerAdapter = new LoaiDichVuSpinnerAdapter(context, listLoaiDichVu);
         spinner.setAdapter(spinnerAdapter);
-        // lay maLoaiSach
+        // lấy mã dịch vụ
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 maLoaiDichVu = listLoaiDichVu.get(position).getMaLoai();
-//                Toast.makeText(context, "Chọn "+listLoaiSach.get(position).getTenLoai(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

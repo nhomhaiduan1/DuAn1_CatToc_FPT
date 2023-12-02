@@ -54,7 +54,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
     KhachHangSpinnerAdapter khachHangSpinnerAdapter;
     ArrayList<KhachHang> listKhachHang;
     KhachHangDAO khachHangDAO;
-    KhachHang khachHang;
+
     int maKhachHang;
 
     DichVuSpinnerAdapter dichVuSpinnerAdapter;
@@ -112,7 +112,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
         btnCancel = dialog.findViewById(R.id.btnCancel);
         btnSave = dialog.findViewById(R.id.btnSave);
         // set ngày thuê
-        tvNgay.setText("Ngày thuê: " + sdf.format(new Date()));
+        tvNgay.setText("Ngày: " + sdf.format(new Date()));
         edMaHD.setEnabled(false);
 
         khachHangDAO = new KhachHangDAO(context);
@@ -124,7 +124,6 @@ public class fragment_QuanLyHoaDon extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 maKhachHang = listKhachHang.get(position).getMaKH();
-//                Toast.makeText(context, "Chọn: "+listThanhVien.get(position).getHoTen(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -138,14 +137,14 @@ public class fragment_QuanLyHoaDon extends Fragment {
         listSach = (ArrayList<DichVu>) dichVuDAO.getAll();
         dichVuSpinnerAdapter = new DichVuSpinnerAdapter(context, listSach);
         spDichVu.setAdapter(dichVuSpinnerAdapter);
-        // lay maloaisach
+        // lay mã loại dịch vụ
         spDichVu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 maDichVu = listSach.get(position).getMaDichVu();
                 gia = listSach.get(position).getGiaDichVu();
                 tvGia.setText("Tiền Dịch Vụ: " + gia);
-//                Toast.makeText(context, "Chọn: "+listSach.get(position).getTenSach(), Toast.LENGTH_SHORT).show();
+//
             }
 
 
