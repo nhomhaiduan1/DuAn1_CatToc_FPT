@@ -68,7 +68,7 @@ public class HoaDonAdapter extends ArrayAdapter<HoaDon> {
             tvTenKH.setText("Khách Hàng: " + KhachHang.getHoTen());
 //            Nhanvien nhanvien = NhanVienDAO.getID(String.valueOf(item.getMaNV()));
             tvGia = v.findViewById(R.id.tvGia);
-            tvGia.setText("Tiền Dịch Vụ: " + item.getTienDichVu());
+            tvGia.setText("Tiền Dịch Vụ: " + item.getTienDichVu() + "K");
             tvNgay = v.findViewById(R.id.tvNgayHD);
             tvNgay.setText("Ngày : " + sdf.format(item.getNgay()));
 

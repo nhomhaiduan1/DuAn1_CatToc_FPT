@@ -51,7 +51,7 @@ public class DichVuAdapter extends ArrayAdapter<DichVu> {
             tvTenDichVu = v.findViewById(R.id.tvTenDichVu);
             tvTenDichVu.setText("Tên Dịch Vụ: " + item.getTenDichVu());
             tvGiaDichVu = v.findViewById(R.id.tvGiaThue);
-            tvGiaDichVu.setText("Giá Dịch Vụ: " + item.getGiaDichVu()+"VND");
+            tvGiaDichVu.setText("Giá Dịch Vụ: " + item.getGiaDichVu()+"K");
             tvLoaiDichVu = v.findViewById(R.id.tvLoaiDichVu);
             tvLoaiDichVu.setText("Loại Dịch Vụ: " + loaiSach.getTenLoai());
 
