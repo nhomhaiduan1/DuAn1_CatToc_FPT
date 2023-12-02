@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +33,8 @@ public class fragment_QuanLyKhachHang extends Fragment {
     KhachHang item;
     FloatingActionButton fab;
     Dialog dialog;
-    EditText edMaTV, edTenTV, edNamSinh, edCccd;
-    Button btnSave, btnCancel;
+    EditText edMaTV, edTenTV, edNamSinh, edCccd ,edSoCuoi;
+    Button btnSave, btnCancel,btnTimKiem;
     public fragment_QuanLyKhachHang() {
         // Required empty public constructor
     }
@@ -44,6 +45,8 @@ public class fragment_QuanLyKhachHang extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_khach_hang, container, false);
         lvKhachHang = v.findViewById(R.id.lvKhachHang);
+        edSoCuoi = v.findViewById(R.id.edSoCuoi);
+        btnTimKiem = v.findViewById(R.id.btnTimKiem);
         fab = v.findViewById(R.id.fab);
         dao = new KhachHangDAO(getActivity());
         capNhatLv();
@@ -62,9 +65,44 @@ public class fragment_QuanLyKhachHang extends Fragment {
                 return false;
             }
         });
+        btnTimKiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String soCuoi = edSoCuoi.getText().toString();
+                if (!soCuoi.isEmpty()) {
+                    timKiemKhachHangTheoSoCuoi(soCuoi);
+                } else {
+                    // Hiển thị thông báo khi ô tìm kiếm trống
+                    Toast.makeText(getContext(), "Vui lòng nhập 3 số cuối", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        // Thêm sự kiện cho việc xóa nội dung ô tìm kiếm
+        edSoCuoi.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_DEL) {
+                    // Nếu người dùng ấn nút DELETE, thực hiện cập nhật ListView
+                    capNhatLv();
+                }
+                return false;
+            }
+        });
         return v;
-    }
 
+    }
+    // Phương thức tìm kiếm khách hàng theo 3 số cuối của số điện thoại
+    private void timKiemKhachHangTheoSoCuoi(String soCuoi) {
+        ArrayList<KhachHang> ketQuaTimKiem = dao.searchByLastThreeDigits(soCuoi);
+        if (ketQuaTimKiem != null && !ketQuaTimKiem.isEmpty()) {
+            // Cập nhật danh sách khách hàng trên ListView
+            adapter = new KhachHangAdapter(getActivity(), this, ketQuaTimKiem);
+            lvKhachHang.setAdapter(adapter);
+        } else {
+            // Hiển thị thông báo khi không tìm thấy kết quả
+            Toast.makeText(getContext(), "Không tìm thấy khách hàng", Toast.LENGTH_SHORT).show();
+        }
+    }
     void capNhatLv() {
         list = (ArrayList<KhachHang>) dao.getAll();
         adapter = new KhachHangAdapter(getActivity(), this, list);
