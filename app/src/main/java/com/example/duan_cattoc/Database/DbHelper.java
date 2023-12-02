@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
-public static final int DB_VERSION = 12;
+public static final int DB_VERSION = 13;
 
 
     public DbHelper (@Nullable Context context) {
@@ -62,9 +62,9 @@ public static final int DB_VERSION = 12;
         db.execSQL("INSERT INTO KhachHang VALUES(1,'Phùng Thanh Độ','2004', '0335888092')," +
                 "(2,'Nguyễn Thị Trân','2001', '03283234231')");
         db.execSQL("INSERT INTO LoaiDichVu VALUES(1,'Cắt Tóc'),(2,'Nhuộm Tóc'),(3,'Uốn Tóc')");
-        db.execSQL("INSERT INTO DichVu VALUES(1,'Cắt Layer',40000,'2'),(2,'Nhuộm Vàng',15000,'1'),(3,'Uốn Con Sâu',200000,'3')");
-        db.execSQL("INSERT INTO HoaDon VALUES(1,'admin','1','1','300000','2023/12/2','1')," +
-                "(2,'NguyenVanM','2','2','200000','2023/12/2','1')");
+        db.execSQL("INSERT INTO DichVu VALUES(1,'Cắt Layer',40,'2'),(2,'Nhuộm Vàng',150,'1'),(3,'Uốn Con Sâu',200,'3')");
+        db.execSQL("INSERT INTO HoaDon VALUES(1,'admin','1','1','30','2023/12/2','1')," +
+                "(2,'NguyenVanM','2','2','20','2023/12/2','1')");
     }
 
     @Override
