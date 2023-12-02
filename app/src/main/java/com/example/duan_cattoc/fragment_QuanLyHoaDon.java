@@ -147,7 +147,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 maDichVu = listSach.get(position).getMaDichVu();
                 gia = listSach.get(position).getGiaDichVu();
-                tvGia.setText("Tiền Dịch Vụ: " + gia);
+                tvGia.setText("Tiền Dịch Vụ: " + gia +"K");
 //
             }
 
@@ -175,7 +175,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
             spDichVu.setSelection(positionDichVu);
 
             tvNgay.setText("Ngày Cắt: " + sdf.format(item.getNgay()));
-            tvGia.setText("Giá Tiền: " + item.getTienDichVu());
+            tvGia.setText("Giá Tiền: " + item.getTienDichVu() +"K");
             if (item.getThanhToan() == 1) {
                 chkThanhToan.setChecked(true);
             } else {
