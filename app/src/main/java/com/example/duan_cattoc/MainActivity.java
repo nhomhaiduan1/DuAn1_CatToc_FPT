@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
         }
         fragment_QuanLyHoaDon frquanlydonhang = new fragment_QuanLyHoaDon();
         replaceFrg(frquanlydonhang);
-        if (user.equalsIgnoreCase("admin")) {
-            nv.getMenu().findItem(R.id.sub_DoanhThu).setVisible(true);
-        }
-        fragment_DoanhThu fragmentDoanhThu = new fragment_DoanhThu();
-        replaceFrg(fragmentDoanhThu);
+//        if (user.equalsIgnoreCase("admin")) {
+//            nv.getMenu().findItem(R.id.sub_DoanhThu).setVisible(true);
+//        }
+//        fragment_DoanhThu fragmentDoanhThu = new fragment_DoanhThu();
+//        replaceFrg(fragmentDoanhThu);
 
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
