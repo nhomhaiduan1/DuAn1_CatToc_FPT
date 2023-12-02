@@ -22,13 +22,10 @@ public class KhachHangDAO {
         DbHelper dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase();
     }
-
-    // Thêm phương thức tìm kiếm khách hàng theo 3 số cuối của số điện thoại
     public ArrayList<KhachHang> searchByLastThreeDigits(String lastThreeDigits) {
         String sql = "SELECT * FROM KhachHang WHERE SUBSTR(SDT, -3) = ?";
         return (ArrayList<KhachHang>) getData(sql, lastThreeDigits);
     }
-
 
     public long insert(KhachHang obj) {
         ContentValues values = new ContentValues();
@@ -61,9 +58,6 @@ public class KhachHangDAO {
         return list.get(0);
     }
 
-
-
-
     @SuppressLint("Range")
     private List<KhachHang> getData(String sql, String... selectionArgs) {
         List<KhachHang> list = new ArrayList<>();
@@ -77,7 +71,6 @@ public class KhachHangDAO {
             Log.i("//==", obj.toString());
             list.add(obj);
         }
-        cursor.close();
         return list;
     }
 

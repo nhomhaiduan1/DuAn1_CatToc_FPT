@@ -19,7 +19,15 @@ public class HoaDonDAO {
     private static SQLiteDatabase db;
     private static Context context;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+    public List<HoaDon> searchHoaDonByTenKhachHang(String tenKhachHang) {
+        // Xây dựng truy vấn SQL để tìm kiếm hóa đơn theo tên khách hàng
+        String sql = "SELECT * FROM HoaDon hd " +
+                "JOIN KhachHang kh ON hd.maKH = kh.maKH " +
+                "WHERE kh.tenKhachHang LIKE ?";
 
+        // Thực hiện truy vấn và trả về danh sách kết quả
+        return getData(sql, "%" + tenKhachHang + "%");
+    }
     public HoaDonDAO(Context context) {
         this.context = context;
         DbHelper dbHelper = new DbHelper(context);

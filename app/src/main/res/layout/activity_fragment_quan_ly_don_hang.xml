@@ -5,13 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment_QuanLyHoaDon">
+    <EditText
+        android:id="@+id/edtSearchTenKH"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Nhập tên khách hàng"
+        android:inputType="text"
+      />
 
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:layout_marginTop="50dp"
+        android:hint="Tìm Kiếm "
+
+        android:backgroundTint="#03A9F4"/>
         <ListView
             android:id="@+id/lvHoaDon"
+            android:layout_marginTop="100dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"

@@ -12,12 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn_CatToc"
         tools:targetApi="31">
-<<<<<<< HEAD
+
 <!--        <activity-->
 <!--            android:name=".TopNhanVien"-->
 <!--            android:exported="false" />-->
-=======
->>>>>>> ce1867691cadc7f0b542bb22a5d10007b8b706eb
+
         <activity
             android:name=".adapter.LoaiDichVuSpinnerAdapter"
             android:exported="false" />

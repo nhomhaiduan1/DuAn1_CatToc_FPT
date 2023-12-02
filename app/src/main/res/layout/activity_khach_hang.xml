@@ -9,7 +9,6 @@
     android:layout_marginTop="10dp"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:src="@drawable/ic_phone"
     android:id="@+id/edSoCuoi"
     android:hint="Nhập Vào 3 Số cuối Của Số Điện Thoại"
 

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                 int id = item.getItemId();
                 if (id == R.id.sub_quanlydonhang) {
-                    setTitle("Quản Lý Đơn Hàng");
+                    setTitle("Quản Lý Hóa Đơn");
                     replaceFrg(frquanlydonhang);
 
                 } else if (id == R.id.sub_QLDV) {
