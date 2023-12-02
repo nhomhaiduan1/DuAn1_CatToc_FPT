@@ -10,6 +10,7 @@
             android:id="@+id/sub_QLDV"
             android:icon="@drawable/ic_dv"
             android:title="Quản lý dịch vụ" />
+
         <item android:id="@+id/sub_LoaiDichVu"
             android:icon="@drawable/ic_his"
             android:title="Loại Dịch Vụ"/>
@@ -21,7 +22,9 @@
         <item android:id="@+id/sub_DoanhThu"
             android:icon="@drawable/ic_doanhthu"
             android:title="Doanh thu"/>
-
+        <item android:id="@+id/sub_Top"
+            android:icon="@drawable/ic_phone"
+            android:title="Top 3 sản phẩm Dùng nhiều"/>
 
 
 
@@ -32,9 +35,7 @@
         android:visible="false"
         android:title="Quản Lý Nhân Viên"
         />
-    <item android:id="@+id/sub_LienHe"
-        android:icon="@drawable/ic_phone"
-        android:title="Liên Hệ"/>
+
     <item android:id="@+id/sub_Pass"
         android:icon="@drawable/ic_pass"
         android:title="Đổi mật khẩu"
