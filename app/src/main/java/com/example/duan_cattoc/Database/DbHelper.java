@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
-public static final int DB_VERSION = 13;
+public static final int DB_VERSION = 14;
 
 
     public DbHelper (@Nullable Context context) {

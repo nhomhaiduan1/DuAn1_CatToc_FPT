@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -62,17 +63,16 @@ public class MainActivity extends AppCompatActivity {
         tvUser.setText("Welcome " + username + "!");
 
         // admin co quyen add user
-        if (user.equalsIgnoreCase("admin")) {
+        if (user != null && user.equalsIgnoreCase("admin")) {
             nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
+            nv.getMenu().findItem(R.id.sub_DoanhThu).setVisible(true);
         }
+
         fragment_QuanLyHoaDon frquanlydonhang = new fragment_QuanLyHoaDon();
         replaceFrg(frquanlydonhang);
 
-        if (user.equalsIgnoreCase("admin")) {
-            nv.getMenu().findItem(R.id.sub_DoanhThu).setVisible(true);
-        }
-        fragment_DoanhThu fragmentDoanhThu = new fragment_DoanhThu();
-        replaceFrg(fragmentDoanhThu);
+
+
 
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -93,11 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     fragment_QuanLyKhachHang frkhachhang = new fragment_QuanLyKhachHang();
                     replaceFrg(frkhachhang);
 
-                } else if (id == R.id.sub_DoanhThu) {
-                    setTitle("Quản lý Doanh Thu");
-                    fragment_DoanhThu frdoanhthu = new fragment_DoanhThu();
-                    replaceFrg(frdoanhthu);
-
                 } else if (id == R.id.sub_LoaiDichVu) {
                     setTitle("Loại Dịch Vụ");
                     fragment_LoaiDichVu frloaidichvu = new fragment_LoaiDichVu();
@@ -113,9 +108,14 @@ public class MainActivity extends AppCompatActivity {
                     fragment_ThemNhanVien fradduser = new fragment_ThemNhanVien();
                     replaceFrg(fradduser);
 
-           }
+           }else if (id == R.id.sub_DoanhThu) {
+                    setTitle("Quản lý Doanh Thu");
+                    fragment_DoanhThu frdoanhthu = new fragment_DoanhThu();
+                    replaceFrg(frdoanhthu);
 
-               else if (id == R.id.sub_Pass) {
+                }
+
+                else if (id == R.id.sub_Pass) {
                     setTitle("Thay đổi mật khẩu");
                     fragment_DoiMatKhau frchangepass = new fragment_DoiMatKhau();
                     replaceFrg(frchangepass);
