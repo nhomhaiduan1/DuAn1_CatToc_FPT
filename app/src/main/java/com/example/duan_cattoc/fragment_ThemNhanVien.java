@@ -29,7 +29,7 @@ public class fragment_ThemNhanVien extends Fragment {
     ArrayList<Nhanvien> list;
     FloatingActionButton fab;
     Dialog dialog;
-    EditText edUser,edHoTen,edPass,edRePass;
+    EditText edUser,edHoTen,edPass,edRePass,edDiaChi,edsDT;
     Button btnSaveTT,btnCancleTT;
     static NhanVienDAO dao;
     NhanVienAdapter adapter;
@@ -103,14 +103,18 @@ public class fragment_ThemNhanVien extends Fragment {
         edUser = dialog.findViewById(R.id.edUser);
         edHoTen = dialog.findViewById(R.id.edHoTen);
         edPass = dialog.findViewById(R.id.edPass);
+        edDiaChi=dialog.findViewById(R.id.edDiaChi);
+        edsDT=dialog.findViewById(R.id.edsDT);
         edRePass = dialog.findViewById(R.id.edRePass);
         btnCancleTT = dialog.findViewById(R.id.btnCancelTT);
         btnSaveTT = dialog.findViewById(R.id.btnSaveTT);
 
         if (type != 0){
             edUser.setText(item.getMaNV());
-            edHoTen.setText(item.getHoTen());
             edPass.setText(item.getMatKhau());
+            edHoTen.setText(item.getHoTen());
+            edDiaChi.setText(item.getDiaChi());
+            edsDT.setText(item.getsDT());
             edRePass.setText(item.getMatKhau());
         }
 
@@ -127,16 +131,20 @@ public class fragment_ThemNhanVien extends Fragment {
                 item = new Nhanvien();
 
                 item.setMaNV(edUser.getText().toString());
-                item.setHoTen(edHoTen.getText().toString());
                 item.setMatKhau(edPass.getText().toString());
+                item.setHoTen(edHoTen.getText().toString());
+                item.setDiaChi(edDiaChi.getText().toString());
+                item.setsDT(edsDT.getText().toString());
                 if(validate() > 0){
                     if (type == 0){
                         if (dao.insert(item) > 0){
                             Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
                             edUser.setText("");
-                            edHoTen.setText("");
                             edPass.setText("");
                             edRePass.setText("");
+                            edHoTen.setText("");
+                            edDiaChi.setText("");
+                            edsDT.setText("");
                         }else {
                             Toast.makeText(context, "Thêm thất bại", Toast.LENGTH_SHORT).show();
                         }
@@ -158,7 +166,7 @@ public class fragment_ThemNhanVien extends Fragment {
 
     public int validate() {
         int check = 1;
-        if (edUser.getText().length() == 0 || edHoTen.getText().length() == 0 || edPass.getText().length() == 0 || edRePass.getText().length() == 0) {
+        if (edUser.getText().length() == 0 || edHoTen.getText().length() == 0 || edPass.getText().length() == 0 || edRePass.getText().length() == 0 ||edDiaChi.getText().length()==0||edsDT.getText().length()==0) {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
         }else {

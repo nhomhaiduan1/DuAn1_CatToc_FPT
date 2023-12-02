@@ -23,7 +23,7 @@ public class NhanVienAdapter extends ArrayAdapter<Nhanvien> {
     private Context context;
     fragment_ThemNhanVien fragment;
     private ArrayList<Nhanvien> list;
-    TextView tvMaNV,tvTenNV,tvMatKhau;
+    TextView tvMaNV,tvTenNV,tvMatKhau,tvDiaChi,tvSDT;
     ImageView imgDel;
     NhanVienDAO dao;
 
@@ -53,10 +53,15 @@ public class NhanVienAdapter extends ArrayAdapter<Nhanvien> {
         if (item != null){
             tvMaNV = v.findViewById(R.id.tvMaNV);
             tvMaNV.setText("Mã NV: "+item.getMaNV());
-            tvTenNV= v.findViewById(R.id.tvTenNV);
-            tvTenNV.setText("Họ tên: "+item.getHoTen());
+
             tvMatKhau = v.findViewById(R.id.tvMatKhau);
             tvMatKhau.setText("Mật khẩu: "+item.getMatKhau());
+            tvTenNV= v.findViewById(R.id.tvTenNV);
+            tvTenNV.setText("Họ tên: "+item.getHoTen());
+            tvDiaChi=v.findViewById(R.id.tvDiaChi);
+            tvDiaChi.setText("Địa Chỉ:"+item.getDiaChi());
+            tvSDT=v.findViewById(R.id.tvSDT);
+            tvSDT.setText("Số Điện Thoại:"+item.getsDT());
 
 
             imgDel = v.findViewById(R.id.imgDeleteLS);

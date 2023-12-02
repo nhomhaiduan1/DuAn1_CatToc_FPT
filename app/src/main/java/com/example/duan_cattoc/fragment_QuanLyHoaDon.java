@@ -112,7 +112,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
         btnCancel = dialog.findViewById(R.id.btnCancel);
         btnSave = dialog.findViewById(R.id.btnSave);
         // set ngày thuê
-        tvNgay.setText("Ngày thuê: " + sdf.format(new Date()));
+        tvNgay.setText("Ngày : " + sdf.format(new Date()));
         edMaHD.setEnabled(false);
 
         khachHangDAO = new KhachHangDAO(context);

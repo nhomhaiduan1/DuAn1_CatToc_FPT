@@ -38,6 +38,15 @@
                     android:textStyle="bold"
                     android:textSize="14dp"
                     android:text="MaNV"/>
+
+                <TextView
+                    android:id="@+id/tvMatKhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="MatKhau"/>
                 <TextView
                     android:id="@+id/tvTenNV"
                     android:layout_width="match_parent"
@@ -47,13 +56,21 @@
                     android:textStyle="bold"
                     android:text="TenNV"/>
                 <TextView
-                    android:id="@+id/tvMatKhau"
+                    android:id="@+id/tvDiaChi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="14dp"
+                    android:textSize="20dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="MatKhau"/>
+                    android:text="Địa Chỉ"/>
+                <TextView
+                    android:id="@+id/tvSDT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Số Điện Thoại"/>
             </LinearLayout>
             <ImageView
                 android:id="@+id/imgDeleteLS"

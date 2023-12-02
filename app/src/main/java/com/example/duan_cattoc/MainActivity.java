@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFrg(frlienhe);
 
                 } else if (id == R.id.sub_AddUser) {
-                    setTitle("Thêm người dùng");
+                    setTitle("Thêm NV và  Thông Tin NV");
                     fragment_ThemNhanVien fradduser = new fragment_ThemNhanVien();
                     replaceFrg(fradduser);
 

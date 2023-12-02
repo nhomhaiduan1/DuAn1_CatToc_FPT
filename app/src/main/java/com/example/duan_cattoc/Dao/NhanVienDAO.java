@@ -23,15 +23,19 @@ public class NhanVienDAO {
     public long insert(Nhanvien obj) {
         ContentValues values = new ContentValues();
         values.put("maNV", obj.getMaNV());
-        values.put("hoTen", obj.getHoTen());
         values.put("matKhau", obj.getMatKhau());
+        values.put("hoTen", obj.getHoTen());
+        values.put("diaChi",obj.getDiaChi());
+        values.put("sDT",obj.getsDT());
         return db.insert("NhanVien", null, values);
     }
 
     public long updatePass(Nhanvien obj) {
         ContentValues values = new ContentValues();
-        values.put("hoTen", obj.getHoTen());
         values.put("matKhau", obj.getMatKhau());
+        values.put("hoTen", obj.getHoTen());
+        values.put("diaChi",obj.getDiaChi());
+        values.put("sDT",obj.getsDT());
         return db.update("NhanVien", values, "maNV = ?", new String[]{String.valueOf(obj.getMaNV())});
     }
 
@@ -67,8 +71,10 @@ public class NhanVienDAO {
         while (cursor.moveToNext()) {
             Nhanvien obj = new Nhanvien();
             obj.setMaNV(cursor.getString(cursor.getColumnIndex("maNV")));
-            obj.setHoTen(cursor.getString(cursor.getColumnIndex("hoTen")));
             obj.setMatKhau(cursor.getString(cursor.getColumnIndex("matKhau")));
+            obj.setHoTen(cursor.getString(cursor.getColumnIndex("hoTen")));
+            obj.setDiaChi(cursor.getString(cursor.getColumnIndex("diaChi")));
+            obj.setsDT(cursor.getString(cursor.getColumnIndex("sDT")));
             list.add(obj);
         }
         return list;

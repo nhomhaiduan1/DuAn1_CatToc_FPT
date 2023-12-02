@@ -8,18 +8,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tạo tài khoản"
+        android:text="Tạo tài khoản và thông tin nhân viên"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textSize="30dp"
         android:textColor="@color/black"
         android:layout_marginTop="20dp"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/man"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"/>
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/man"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_gravity="center_horizontal"/>-->
 
     <EditText
         android:id="@+id/edUser"
@@ -28,28 +28,15 @@
         android:hint="Tên đăng nhập"
         android:layout_marginTop="20dp"
         android:drawableStart="@drawable/ic_person"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edHoTen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_person"
-            android:hint=" Họ và tên"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         app:passwordToggleEnabled="true"
         android:layout_marginRight="20dp">
@@ -65,7 +52,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         app:passwordToggleEnabled="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
@@ -78,7 +65,49 @@
             android:hint=" Nhập lại mật khẩu"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edHoTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:hint=" Họ và tên"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:hint=" Địa Chỉ:"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edsDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:hint=" Số Điện Thoại"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

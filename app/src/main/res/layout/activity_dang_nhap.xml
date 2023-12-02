@@ -7,15 +7,25 @@
     android:layout_margin="15dp"
     android:orientation="vertical"
     tools:context=".DangNhap"
- >
+   >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/logocattoc"
-        android:layout_marginBottom="70dp"
-        android:layout_marginTop="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="193dp"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="70dp"
+            android:src="@drawable/logocattoc" />
+    </LinearLayout>
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

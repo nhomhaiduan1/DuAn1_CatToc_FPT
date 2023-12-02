@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 public static final String DB_NAME ="CATTOC_FPT";
-public static final int DB_VERSION = 11;
+public static final int DB_VERSION = 12;
 
 
     public DbHelper (@Nullable Context context) {
@@ -21,8 +21,10 @@ public static final int DB_VERSION = 11;
 //Tạo bảng nhân viên
         String createTableNhanVien = "create table NhanVien(" +
                 "maNV TEXT PRIMARY KEY, " +
+                "matKhau TEXT NOT NULL, " +
                 "hoTen TEXT NOT NULL, " +
-                "matKhau TEXT NOT NULL)";
+                "diaChi TEXT NOT NULL, " +
+                "sDT TEXT NOT NULL)";
         db.execSQL(createTableNhanVien);
 //Tạo bảng loại dịch vụ
         String createTableLoaiDichVu = "create table LoaiDichVu(" +
@@ -55,8 +57,8 @@ public static final int DB_VERSION = 11;
                 "thanhToan INTEGER NOT NULL)";
         db.execSQL(createTableHoaDon);
 //Data Mẫu
-        db.execSQL("INSERT INTO NhanVien VALUES('admin','Admin','admin')," +
-                "('NguyenVanM','Bùi Công Minh','1')");
+        db.execSQL("INSERT INTO NhanVien VALUES('admin','admin','Admin','Hà Nội','0355888999')," +
+                "('NguyenVanM','1','Tran Văn Sơn','Hải Phòng','02364728123')");
         db.execSQL("INSERT INTO KhachHang VALUES(1,'Phùng Thanh Độ','2004', '0335888092')," +
                 "(2,'Nguyễn Thị Trân','2001', '03283234231')");
         db.execSQL("INSERT INTO LoaiDichVu VALUES(1,'Cắt Tóc'),(2,'Nhuộm Tóc'),(3,'Uốn Tóc')");
