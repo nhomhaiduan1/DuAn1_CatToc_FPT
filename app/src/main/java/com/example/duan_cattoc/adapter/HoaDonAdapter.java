@@ -16,11 +16,13 @@ import com.example.duan_cattoc.Dao.DichVuDAO;
 import com.example.duan_cattoc.Dao.HoaDonDAO;
 import com.example.duan_cattoc.Dao.KhachHangDAO;
 import com.example.duan_cattoc.Dao.LoaiDichVuDAO;
+import com.example.duan_cattoc.Dao.NhanVienDAO;
 import com.example.duan_cattoc.R;
 import com.example.duan_cattoc.fragment_QuanLyHoaDon;
 import com.example.duan_cattoc.model.DichVu;
 import com.example.duan_cattoc.model.HoaDon;
 import com.example.duan_cattoc.model.KhachHang;
+import com.example.duan_cattoc.model.Nhanvien;
 
 
 import java.text.SimpleDateFormat;
@@ -64,8 +66,9 @@ public class HoaDonAdapter extends ArrayAdapter<HoaDon> {
             KhachHang KhachHang = KhachHangDAO.getID(String.valueOf(item.getMaKH()));
             tvTenKH = v.findViewById(R.id.tvTenTV);
             tvTenKH.setText("Khách Hàng: " + KhachHang.getHoTen());
+//            Nhanvien nhanvien = NhanVienDAO.getID(String.valueOf(item.getMaNV()));
             tvGia = v.findViewById(R.id.tvGia);
-            tvGia.setText("Tiền Dịch Vụ: " + item.getTienDichVu());
+            tvGia.setText("Tiền Dịch Vụ: " + item.getTienDichVu() + "K");
             tvNgay = v.findViewById(R.id.tvNgayHD);
             tvNgay.setText("Ngày : " + sdf.format(item.getNgay()));
 

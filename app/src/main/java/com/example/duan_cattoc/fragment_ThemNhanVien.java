@@ -72,7 +72,7 @@ public class fragment_ThemNhanVien extends Fragment {
     public void xoa(final String Id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Delete");
-        builder.setMessage("Bạn có muốn xóa không?");
+        builder.setMessage("Bạn có muốn xóa nhân viên này không?");
         builder.setCancelable(true);
 
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

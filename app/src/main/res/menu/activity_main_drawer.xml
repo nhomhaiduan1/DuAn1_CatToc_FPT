@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/sub_quanlydonhang"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/baseline_shopping_basket_24"
             android:title="Quản Lý Đơn Hàng" />
         <item
             android:id="@+id/sub_QLDV"
@@ -12,7 +12,7 @@
             android:title="Quản lý dịch vụ" />
 
         <item android:id="@+id/sub_LoaiDichVu"
-            android:icon="@drawable/ic_his"
+            android:icon="@drawable/cut"
             android:title="Loại Dịch Vụ"/>
         <item
             android:id="@+id/sub_QLKH"
@@ -23,8 +23,8 @@
             android:icon="@drawable/ic_doanhthu"
             android:title="Doanh thu"/>
         <item android:id="@+id/sub_Top"
-            android:icon="@drawable/ic_phone"
-            android:title="Top 3 sản phẩm Dùng nhiều"/>
+            android:icon="@drawable/baseline_align_horizontal_left_24"
+            android:title="Top 3 dịch vụ dùng nhiều nhất"/>
 
 
 
