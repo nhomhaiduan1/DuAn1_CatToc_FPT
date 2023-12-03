@@ -94,6 +94,7 @@ public class fragment_QuanLyHoaDon extends Fragment {
             }
         });
         // Xử lý sự kiện khi người dùng nhấn nút tìm kiếm
+        // Xử lý sự kiện khi người dùng nhấn nút tìm kiếm
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
